@@ -1,12 +1,14 @@
 package com.example.weather.controller;
 
 import com.example.weather.entity.Provider;
+import com.example.weather.entity.Weather;
 import com.example.weather.service.WeatherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -38,5 +40,10 @@ public abstract class AbstractWeatherController extends AbstractRestController {
 
     public List<String> getCities() {
         return Arrays.asList(citiesList.split("\\|"));
+    }
+
+    void saveTempToDb(String city, Provider provider, BigDecimal temp) {
+        logger.info("Температура {} для города {}", temp, city);
+        this.weatherService.saveWeather(new Weather(city, temp, provider));
     }
 }

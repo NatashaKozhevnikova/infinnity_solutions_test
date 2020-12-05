@@ -1,10 +1,17 @@
 package com.example.weather.controller;
 
 import com.example.weather.entity.Provider;
+import com.example.weather.service.WeatherSoapClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
 
 @Service
 public class WeatherSoapService extends AbstractWeatherController {
+
+    @Autowired
+    private WeatherSoapClient soapClient;
 
     public WeatherSoapService() {
         super.setProviderType(Provider.ApiType.SOAP);
@@ -12,6 +19,7 @@ public class WeatherSoapService extends AbstractWeatherController {
 
     @Override
     public void downloadWeather(String city, Provider provider) {
-
+        BigDecimal temp = soapClient.getTemperature(city, provider.getUrl());
+        saveTempToDb(city, provider, temp);
     }
 }
