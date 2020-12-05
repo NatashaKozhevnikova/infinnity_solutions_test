@@ -22,9 +22,9 @@ SOAP-сервис развернут на хостинге Heroku <a>https://soa
 Приложение также развернуто на Heroku. Получение данных о средней температуре 
  по всем провайдерам за сегодня:
 
-`https://weather-provider.herokuapp.com/weather/average?city=Moscow`
+https://weather-provider.herokuapp.com/weather/average?city=Moscow
 
 Получение данных о средней температуре по всем провайдерам за выбранную дату:
 
-`https://weather-provider.herokuapp.com/weather/average?city=Moscow&date=2020-10-05`
+https://weather-provider.herokuapp.com/weather/average?city=Moscow&date=2020-10-05
 
