@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
+/**
+ * Сервис получения данных о погоде через SOAP.
+ */
 @Service
 public class WeatherSoapService extends AbstractWeatherController {
 

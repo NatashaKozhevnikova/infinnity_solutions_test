@@ -12,6 +12,9 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * Абстракция для отправки REST запросов
+ */
 public class AbstractRestController {
 
     Logger logger = LoggerFactory.getLogger(this.getClass());

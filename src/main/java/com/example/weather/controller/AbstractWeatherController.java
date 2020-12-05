@@ -12,6 +12,13 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Абстрактный контроллер для обработки погодных данных
+ * при использовании разных методов получения.
+ * Перечисление городов достается из параметра cities.
+ * Запуск по расписанию каждые 5 минут, опрашиваются все
+ * имеющиеся в базе провайдеры
+ */
 @Component
 public abstract class AbstractWeatherController extends AbstractRestController {
     Provider.ApiType providerType;

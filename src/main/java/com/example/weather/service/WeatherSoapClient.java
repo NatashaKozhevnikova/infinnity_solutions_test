@@ -8,6 +8,9 @@ import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * Сервис обработки SOAP-запросов
+ */
 public class WeatherSoapClient extends WebServiceGatewaySupport {
 
     public BigDecimal getTemperature(String city, String url) {

@@ -4,6 +4,10 @@ import com.example.weather.entity.Provider;
 import com.example.weather.json.OpenWeatherResponse;
 import org.springframework.stereotype.Service;
 
+/**
+ * Сервис получения температуры через провайдер api.openweathermap.org
+ *
+ */
 @Service
 public class WeatherRestService extends AbstractWeatherController {
 

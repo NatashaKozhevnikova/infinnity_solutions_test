@@ -13,6 +13,12 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
 
+/**
+ * Контроллер для получения данных из базы.
+ * Средняя температура вычисляется за указанную дату
+ * по всем провайдерам. Если дата не указана, то считается
+ * за сегодня
+ */
 @RestController
 @RequestMapping("/weather")
 public class ApiController {
