@@ -3,6 +3,7 @@ package com.example.weather.json;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OpenWeatherResponse implements Serializable {
@@ -16,18 +17,18 @@ public class OpenWeatherResponse implements Serializable {
         this.main = main;
     }
 
-    public float getTemp() {
+    public BigDecimal getTemp() {
         return this.main.getTemp();
     }
 
     static class OpenWeatherMain {
-        private float temp;
+        private BigDecimal temp;
 
-        public float getTemp() {
+        public BigDecimal getTemp() {
             return temp;
         }
 
-        public void setTemp(float temp) {
+        public void setTemp(BigDecimal temp) {
             this.temp = temp;
         }
     }

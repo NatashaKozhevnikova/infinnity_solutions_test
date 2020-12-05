@@ -3,6 +3,7 @@ package com.example.weather.entity;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,7 @@ public class Weather {
     @Column(name = "weather_id")
     private long id;
     private String city;
-    private float temperature;
+    private BigDecimal temperature;
     @Temporal(TemporalType.TIMESTAMP)
     @CreationTimestamp
     private Date date;
@@ -24,7 +25,7 @@ public class Weather {
     public Weather() {
     }
 
-    public Weather(String city, float temperature, Provider provider) {
+    public Weather(String city, BigDecimal temperature, Provider provider) {
         this.city = city;
         this.temperature = temperature;
         this.provider = provider;
@@ -54,11 +55,11 @@ public class Weather {
         this.city = city;
     }
 
-    public float getTemperature() {
+    public BigDecimal getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(float temperature) {
+    public void setTemperature(BigDecimal temperature) {
         this.temperature = temperature;
     }
 

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.math.RoundingMode;
 import java.util.Date;
 import java.util.List;
 
@@ -26,9 +27,9 @@ public class WeatherService {
     public Float getAverageTemperature(String city, Date date) {
         List<Weather> weatherList = weatherRepository.findAllByCityAndDate(city, date);
         if (weatherList.size() == 0) return null;
-        Float result = 0f;
+        float result = 0f;
         for (Weather obj : weatherList) {
-            result += obj.getTemperature();
+            result += obj.getTemperature().setScale(2, RoundingMode.HALF_DOWN).floatValue();
         }
 
         return result / weatherList.size();

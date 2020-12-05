@@ -21,7 +21,7 @@ public class AbstractRestController {
 
     public Object sendGetRequest(String url, Class responseClass) {
         ResponseEntity responseEntity = sendRequest(url, null, responseClass, HttpMethod.GET);
-        logger.info("Получили ответ от провайдера {}", responseEntity.getStatusCode());
+        logger.info("Получили ответ {}", responseEntity.getStatusCode());
         if (responseEntity.getStatusCode() == HttpStatus.OK) {
             return responseEntity.getBody();
         }

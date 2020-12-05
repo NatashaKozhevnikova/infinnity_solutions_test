@@ -5,6 +5,9 @@ import com.example.weather.entity.Weather;
 import com.example.weather.json.OpenWeatherResponse;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 @Service
 public class WeatherRestService extends AbstractWeatherController {
 
@@ -18,7 +21,7 @@ public class WeatherRestService extends AbstractWeatherController {
             OpenWeatherResponse response = (OpenWeatherResponse) super.sendGetRequest(
                     provider.getUrl().replaceAll("%city%", city), OpenWeatherResponse.class);
             if (response == null) return;
-            float temp = response.getTemp();
+            BigDecimal temp = response.getTemp();
             logger.info("Температура {} для города {}", temp, city);
             weatherService.saveWeather(new Weather(city, temp, provider));
         } catch (Exception e) {
