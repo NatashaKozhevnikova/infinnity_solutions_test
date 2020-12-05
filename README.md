@@ -11,7 +11,7 @@
 SOAP-сервис был реализован самостоятельно, т.к. на данный момент ни один провайдер
 погоды не использует данную технологию. Исходный код в репозитории <a>https://github.com/nat-java/soap-producer</a>
 
-SOAP-сервис развернут на хостинге Heroku <a>https://weather-provider.herokuapp.com/weather/average?city=Moscow</a>
+SOAP-сервис развернут на хостинге Heroku <a>https://soapproduce.herokuapp.com/ws/weather.wsdl</a>
 
 База H2 Database создается при запуске программы и заполняется скриптом. Добавляются псевдоисторические данные 
 и данные провайдеров:
