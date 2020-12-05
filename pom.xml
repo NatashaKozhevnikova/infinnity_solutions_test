@@ -76,7 +76,7 @@
                     <generatePackage>com.example.weather.wsdl</generatePackage>
                     <schemas>
                         <schema>
-                            <url>http://localhost:1236/ws/weather.wsdl</url>
+                            <url>https://soapproduce.herokuapp.com/ws/weather.wsdl</url>
                         </schema>
                     </schemas>
                 </configuration>

@@ -1,6 +1,6 @@
 insert into provider (name, url, type)
 values ('OpenWeather', 'https://api.openweathermap.org/data/2.5/weather?q=%city%&appid=f63245171f3ebf5f0137c7eb28cdd6da&units=metric', 0),
-       ('Localhost', 'http://localhost:1236/ws', 1);
+       ('SoapHeroku', 'https://soapproduce.herokuapp.com/ws', 1);
 
 
 insert into weather (city, date, temperature, provider_id)
